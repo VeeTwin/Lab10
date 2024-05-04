@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Creating Maps with Leaflet </title>
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css 
+integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js 
+integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+<body>
+<div id="map" style="height:600px"></div>
+<script>
+var map = L.map('map').setView([13.7563, 100.5018], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+var greenIcon = L.icon({
+iconUrl: 'pin1.png',
+iconSize: [30,30], // size of the icon
+iconAnchor: [45,45], // point of the icon which will correspond to marker's location
+popupAnchor: [0,-39] // point from which the popup should open relative to the iconAnchor
+});
+
+L.marker([13.75018, 100.49188],{icon:greenIcon}).addTo(map).bindPopup("<b>พระบรมมหาราชวัง (The Grand Palace)</b><br>แขวงพระบรมมหาราชวัง เขตพระนคร<br>กรุงเทพมหานคร 10200");
+L.marker([13.73545,100.53242],{icon:greenIcon}).addTo(map).bindPopup("<b>ตึกศัลวิธานนิเทศ (ภาควิชาสำรวจ) จุฬาลงกรณ์มหาวิทยาลัย</b><br>แขวงวังใหม่ เขตปทุมวัน<br>กรุงเทพมหานคร 10330");
+L.marker([13.74546,100.50239],{icon:greenIcon}).addTo(map).bindPopup("<b>เมก้า พลาซ่า สะพานเหล็ก</b><br>900 ถ.มหาไชย แขวงวังบูรพาภิรมย์<br>เขตพระนคร กรุงเทพมหานคร 10200");
+L.marker([13.76493,100.53828],{icon:greenIcon}).addTo(map).bindPopup("<b>อนุสาวรีย์ชัยสมรภูมิ</b><br>ถ.พหลโยธิน แขวงถนนพญาไท<br>เขตราชเทวี กรุงเทพมหานคร 10400");
+L.marker([13.78909,100.47068],{icon:greenIcon}).addTo(map).bindPopup("<b>ช่างชุ่ย ครีเอทีฟ พาร์ค</b><br>460/8 ถ.สิรินธร แขวงบางพลัด<br>เขตบางพลัด กรุงเทพมหานคร 10700");
+L.marker([13.77776,100.47609],{icon:greenIcon}).addTo(map).bindPopup("<b>เซ็นทรัลปิ่นเกล้า</b><br>7/1 ถ.บรมราชชนนี แขวงอรุณอมรินทร์<br>เขตบางกอกน้อย กรุงเทพมหานคร 10700");
+L.marker([13.75574,100.48517],{icon:greenIcon}).addTo(map).bindPopup("<b>ตลาดวังหลัง</b><br>112 13 ซอยวังหลัง แขวงศิริราช<br>เขตบางกอกน้อย กรุงเทพมหานคร 10700");
+L.marker([13.73197,100.56963],{icon:greenIcon}).addTo(map).bindPopup("<b>เอ็มควอเทียร์</b><br>695 ถ.สุขุมวิท แขวงคลองตันเหนือ<br>เขตวัฒนา กรุงเทพมหานคร 10110");
+L.marker([13.72672,100.51034],{icon:greenIcon}).addTo(map).bindPopup("<b>ไอคอนสยาม (ICONSIAM)</b><br>299 ถ.เจริญนคร แขวงคลองต้นไทร<br>เขตคลองสาน กรุงเทพมหานคร 10600");
+</script>
+</body>
+</html>
